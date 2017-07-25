@@ -46,6 +46,6 @@ class AdjectivesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def adjective_params
-      params.require(:adjective).permit(:word, :attributes)
+      params.require(:adjective).permit(:word, :description)
     end
 end

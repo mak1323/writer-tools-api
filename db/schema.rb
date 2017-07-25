@@ -10,14 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170724174347) do
+ActiveRecord::Schema.define(version: 20170725143405) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "adjectives", force: :cascade do |t|
     t.string "word"
-    t.string "attributes"
+    t.string "description"
   end
 
   create_table "examples", force: :cascade do |t|
