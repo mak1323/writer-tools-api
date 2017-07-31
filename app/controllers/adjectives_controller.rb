@@ -1,5 +1,7 @@
-class AdjectivesController < ApplicationController
-  before_action :set_adjective, only: [:show, :update, :destroy]
+class AdjectivesController < OpenReadController
+# class AdjectivesController < ApplicationController
+  before_action :set_adjective, only: [:show]
+  # before_action :set_adjective, only: [:show, :update, :destroy]
 
   # GET /adjectives
   def index
