@@ -10,14 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170724174347) do
+ActiveRecord::Schema.define(version: 20170801142951) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "adjectives", force: :cascade do |t|
     t.string "word"
-    t.string "attributes"
+    t.string "description"
   end
 
   create_table "examples", force: :cascade do |t|
@@ -34,6 +34,11 @@ ActiveRecord::Schema.define(version: 20170724174347) do
     t.integer "user_id"
     t.string  "comment"
     t.index ["user_id"], name: "index_favorites_on_user_id", using: :btree
+  end
+
+  create_table "given_names", force: :cascade do |t|
+    t.string "given_name"
+    t.string "classical_gender"
   end
 
   create_table "nouns", force: :cascade do |t|
