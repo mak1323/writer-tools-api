@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 Rails.application.routes.draw do
+  resources :backgrounds
+  resources :saved_characters
   resources :family_names
   resources :given_names
   resources :favorites
