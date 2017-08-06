@@ -47,6 +47,6 @@ class FavoritesController < ProtectedController
 
     # Only allow a trusted parameter "white list" through.
     def favorite_params
-      params.require(:favorite).permit(:adjective, :noun, :user_id)
+      params.require(:favorite).permit(:adjective, :noun, :user_id, :comment)
     end
 end
