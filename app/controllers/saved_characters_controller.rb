@@ -1,4 +1,4 @@
-class SavedCharactersController < ApplicationController
+class SavedCharactersController < ProtectedController
   before_action :set_saved_character, only: [:show, :update, :destroy]
 
   # GET /saved_characters
@@ -46,6 +46,8 @@ class SavedCharactersController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def saved_character_params
-      params.require(:saved_character).permit(:given_name, :family_name, :background, :comment)
+      params.require(:saved_character).permit(
+        :given_name, :family_name, :background, :comment, :user_id
+      )
     end
 end
