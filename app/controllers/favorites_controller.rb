@@ -1,4 +1,5 @@
-class FavoritesController < ApplicationController
+class FavoritesController < ProtectedController
+# class FavoritesController < OpenReadController
   before_action :set_favorite, only: [:show, :update, :destroy]
 
   # GET /favorites

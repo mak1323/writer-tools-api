@@ -1,3 +1,3 @@
 class NounSerializer < ActiveModel::Serializer
-  attributes :id, :word, :theme
+  attributes :word
 end

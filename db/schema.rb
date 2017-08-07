@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20170725143405) do
+=======
+ActiveRecord::Schema.define(version: 20170802173135) do
+>>>>>>> database
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,6 +22,14 @@ ActiveRecord::Schema.define(version: 20170725143405) do
   create_table "adjectives", force: :cascade do |t|
     t.string "word"
     t.string "description"
+<<<<<<< HEAD
+=======
+  end
+
+  create_table "backgrounds", force: :cascade do |t|
+    t.text   "background"
+    t.string "genre_type"
+>>>>>>> database
   end
 
   create_table "examples", force: :cascade do |t|
@@ -28,6 +40,10 @@ ActiveRecord::Schema.define(version: 20170725143405) do
     t.index ["user_id"], name: "index_examples_on_user_id", using: :btree
   end
 
+  create_table "family_names", force: :cascade do |t|
+    t.string "family_name"
+  end
+
   create_table "favorites", force: :cascade do |t|
     t.string  "adjective"
     t.string  "noun"
@@ -36,9 +52,22 @@ ActiveRecord::Schema.define(version: 20170725143405) do
     t.index ["user_id"], name: "index_favorites_on_user_id", using: :btree
   end
 
+  create_table "given_names", force: :cascade do |t|
+    t.string "given_name"
+  end
+
   create_table "nouns", force: :cascade do |t|
     t.string "word"
     t.string "theme"
+  end
+
+  create_table "saved_characters", force: :cascade do |t|
+    t.string  "given_name"
+    t.string  "family_name"
+    t.text    "background"
+    t.string  "comment"
+    t.integer "user_id"
+    t.index ["user_id"], name: "index_saved_characters_on_user_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|
@@ -53,4 +82,5 @@ ActiveRecord::Schema.define(version: 20170725143405) do
 
   add_foreign_key "examples", "users"
   add_foreign_key "favorites", "users"
+  add_foreign_key "saved_characters", "users"
 end
