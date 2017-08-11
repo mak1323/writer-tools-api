@@ -1,6 +1,7 @@
 class FavoritesController < ProtectedController
 # class FavoritesController < OpenReadController
   before_action :set_favorite, only: [:show, :update, :destroy]
+  # before_action :set_user #, only: [:show, :update, :destroy]
 
   # GET /favorites
   def index
@@ -36,14 +37,16 @@ class FavoritesController < ProtectedController
 
   # DELETE /favorites/1
   def destroy
+
     @favorite.destroy
   end
 
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_favorite
-      @favorite = Favorite.find(params[:id])
+      @favorite = current_user.favorites.find(params[:id])
     end
+
 
     # Only allow a trusted parameter "white list" through.
     def favorite_params
