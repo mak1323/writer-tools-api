@@ -5,8 +5,8 @@ Rails.application.routes.draw do
   resources :family_names
   resources :given_names
   resources :favorites
-  resources :adjectives
-  resources :nouns
+  resources :adjectives,  only: [:index, :show]
+  resources :nouns, only: [:index, :show]
   resources :examples, except: [:new, :edit]
   post '/sign-up' => 'users#signup'
   post '/sign-in' => 'users#signin'

@@ -1,7 +1,5 @@
 class NounsController < OpenReadController
   before_action :set_noun, only: [:show]
-# class NounsController < ApplicationController
-#   before_action :set_noun, only: [:show, :update, :destroy]
 
   # GET /nouns
   def index
