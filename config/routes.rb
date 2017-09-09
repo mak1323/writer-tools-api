@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 Rails.application.routes.draw do
-  resources :backgrounds
+  resources :backgrounds,  only: [:index, :show]
   resources :saved_characters
-  resources :family_names
-  resources :given_names
+  resources :family_names,  only: [:index, :show]
+  resources :given_names,  only: [:index, :show]
   resources :favorites
   resources :adjectives,  only: [:index, :show]
   resources :nouns, only: [:index, :show]
